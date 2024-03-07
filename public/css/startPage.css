@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+}
+
+.main,
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main {
+  height: 100vh;
+  font-family: LEMON MILK Light;
+  background-image: url("/assets/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main img {
+  width: 500px;
+}
+
+.content h3 {
+  text-align: center;
+  font-size: 35px;
+  width: 60%;
+}
+
+.content span {
+  background-color: #f8cf83;
+}
+
+.content h6 {
+  font-size: 20px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.content input {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  background: transparent;
+}
+
+.content a button{
+  padding: 10px;
+  border: none;
+  
+  background: transparent;
+  border-radius: 50%;
+}
+
+.content a button:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}

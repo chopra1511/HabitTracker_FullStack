@@ -1,0 +1,382 @@
+body{
+  margin: 0;
+}
+
+.dashboard {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+}
+
+.sideSect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: LEMON MILK Light;
+}
+
+.sideSect img {
+  width: 125px;
+  cursor: pointer;
+}
+
+.user {
+  padding: 60px 0px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user img {
+  width: 75px;
+  border-radius: 50%;
+  border: 2px dashed rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.591));
+}
+
+.user h2 {
+  margin-top: 5px;
+  font-size: 15px;
+  padding: 5px 10px;
+  background-color: #f8cf83;
+}
+
+.menu1,
+.menu2 {
+  width: 80%;
+  font-size: 12px;
+}
+
+.menu1 ul,
+.menu2 ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0;
+}
+
+.menu1 li,
+.menu2 li {
+  display: flex;
+  align-items: center;
+}
+
+.menu1 a {
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu1 li span,
+.menu2 li span {
+  padding-left: 10px;
+  margin: 12px 5px;
+}
+
+.menu1 li:hover,
+.menu2 li:hover {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  font-family: LEMON MILK;
+  cursor: pointer;
+}
+
+
+.menu2 {
+  padding: 20px 0 20px;
+}
+
+.menu2 h2 {
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+.sideSect2 {
+  height: 88vh;
+  margin-top: 20px;
+  background-color: #d1d1d1;
+  width: 95%;
+  border-radius: 25px;
+  padding: 25px;
+}
+
+.backButton {
+    border: none;
+    background: transparent;
+    padding: 15px;
+    border-radius: 50px;
+}
+
+.backButton:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+
+
+.main form{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: LEMON MILK;
+}
+
+.main input{
+  border: none;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  outline: none;
+  text-align: center;
+  font-size: 18px;
+}
+
+.main button {
+  margin-top: 20px;
+  font-size: 15px;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  font-family: LEMON MILK;
+}
+
+.main button:hover{
+   cursor: pointer;
+  color: black;
+   transform: scale(1.03) translateY(-7px);
+  /* border-bottom: 3px solid black; */
+  background-color: #f8cf83;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+   margin: 0px;
+  /* padding: 10px 20px; */
+  font-family: LEMON MILK Light;
+  color: gray;
+  font-size: 18px;
+}
+
+.main {
+  margin-bottom: 40px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  background-color: white;
+}
+
+
+
+
+
+
+
+.card {
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  background-color: white;
+  height: 47%;
+}
+
+.year {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(202, 200, 200);
+}
+
+.year h3{
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-family: LEMON MILK Light;
+  color: gray;
+  font-size: 15px;
+}
+
+.year h3:hover{
+  cursor: pointer;
+  color: black;
+   transform: scale(1.03) translateY(-7px);
+  /* border-bottom: 3px solid black; */
+  background-color: #f8cf83;
+}
+
+
+
+
+
+.habits {
+  margin-top: 20px;
+  display: flex;
+  /* justify-content: center; */
+  overflow-y: hidden;
+  width: 77vw;
+}
+
+.noContent {
+  margin-top: 40px;
+  text-align: center;
+  font-family: LEMON MILK ;
+  color: #909090;
+}
+
+.habitCard {
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  background-color: white;
+  background-image: url("../assets/border.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 150px;
+  min-height: 150px;
+  perspective: 500px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  
+}
+
+.habitCard:hover .content {
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back {
+  transform: rotateY( 180deg );
+}
+
+
+.habitCard h1 {
+  font-family: LEMON MILK;
+  font-size: 25px;
+  text-align: center;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+.back button{
+  padding: 15px;
+  border-radius: 40px;
+  border: none;
+  background: transparent;
+}
+
+.back button:hover {
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+
+
+
+.habitStats {
+  height: 87vh;
+  overflow-x: hidden;
+}
+
+.habitStats img {
+    padding-left: 15%;
+}
+
+.statsCard {
+  margin: 1rem;
+  padding: 1rem;
+  min-width: 60%;
+  min-height: 30%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  background-color: white;
+}
+
+.stats_content {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.statsCard h1 {
+  font-family: LEMON MILK;
+  font-size: 35px;
+  text-align: center;
+  word-wrap: break-word;
+  margin: 0;
+  background-color: #f8cf83;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.stats_back button {
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  background: transparent;
+}
+
+.count {
+  font-family: LEMON MILK Light;
+  margin: 0;
+  font-size: 15px;
+}
+
+.stats_back button:hover {
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+.weekView{
+  margin: 30px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.days{
+  font-family: LEMON MILK light;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.date{
+  font-family: LEMON MILK;
+  margin-bottom: 0;
+}
+
+.weekView form button {
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.weekView button:hover {
+  cursor: pointer;
+  background-color: #f0f0f0;
+}

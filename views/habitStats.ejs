@@ -1,0 +1,49 @@
+<%- include('includes/layout.ejs') %>
+
+<div class="habitStats">
+  <% if(habits.length <= 0){ %>
+    <img src="/assets/empty.jpg" alt="app-name" />
+         <% } %>
+   <% for(let habit of habits){ %>
+  <div class="statsCard">
+    <div class="stats_content">
+      <div class="stats_back">
+        <form action="/dashboard/habitStats/delete" method="POST">
+              <input type="hidden" value="<%= habit._id %>" name="habitId"  />
+            <button type="submit">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+      </form>
+      </div>
+      <h1><%= habit.title %></h1>
+      <h2 class="count"><%=habit.count%> / 7</h2>
+    </div>
+    <div class="weekView">
+        <% for(let week of habit.weekData) {%>
+            <div>
+                <h2 class="date"> <%= week.date %> </h2>
+                <h4 class="days"> <%= week.day %> </h4>
+                <form action="/dashboard/habitStats/status" method="POST">
+                    <input type="hidden" value="<%= habit._id %>" name="habitId"  />
+                    <input type="hidden" value="<%= week._id %>" name="weekDayId"  />
+                    <button type="submit">
+                        <% if(week.status === 'None') { %>
+                            <i class="fa-regular fa-circle fa-2xl " style="color: #757575;"></i>
+                        <%}else if(week.status === 'Done') { %>
+                            <i class="fa-solid fa-circle-check fa-2xl" style="color: #2e7d32;"></i>
+                        <% } else { %>
+                            <i class="fa-solid fa-circle-xmark fa-2xl" style="color: #ff0000;"></i>
+                        <%}%>
+                    </button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+  </div>
+<% } %>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+<%- include('includes/layout.ejs') %>
+
+<div class="main">
+  <div class="heading">
+    <h3>Create New Habit</h3>
+  </div>
+  <form action="/dashboard/habit" method="POST">
+    <label for="title">Title</label><br />
+    <input type="text" name="title" required/>
+    <button type="submit">Add</button>
+  </form>
+</div>
+
+<div class="card">
+  <div class="year">
+    <h3>Daily</h3>
+    <h3>Weekly</h3>
+    <h3>Monthly</h3>
+  </div>
+ 
+    
+<% if(habits.length > 0){ %>
+  <div class="habits">
+  <% for(let habit of habits){ %>
+      <div class="habitCard">
+        <div class="content">
+          <div class="front">
+            <h1><%= habit.title %></h1>
+          </div>
+          <div class="back">
+            <form action="/dashboard/delete" method="POST">
+              <input type="hidden" value="<%= habit._id %>" name="habitId"  />
+              <button type="submit">
+                <i class="fa-solid fa-trash fa-2xl" style="color: #ff0000;"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <% } %>
+    </div>
+  </div>  
+  <% } else{ %>
+      <h2 class="noContent">No Habits Added, Create a new one</h2>
+   <% } %>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
